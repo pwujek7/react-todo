@@ -7,11 +7,9 @@ class ToDoItem extends React.Component {
 
   render() {
     return (
-      <li>
-        <div>
-          <p>{this.props.item}</p>
-          <span onClick={this.handleDelete.bind(this)}>X</span>
-        </div>
+      <li className="container__item">
+        <p className="container__txt">{this.props.item}</p>
+        <span className="container__icon" onClick={this.handleDelete.bind(this)}>x</span>
       </li>
     )
   }

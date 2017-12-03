@@ -43,7 +43,7 @@ class ToDoList extends React.Component {
       <div className="container">
         <h1 className="container__title">To do list</h1>
         <ToDoInput onAdd={this.addItem}/>
-        <ul>
+        <ul className="container__list">
           {todos}
         </ul>
       </div>
