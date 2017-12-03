@@ -1,8 +1,9 @@
 import React from 'react';
 
 import ToDoItem from './ToDoItem.js';
+import ToDoInput from './ToDoInput.js';
 
-let tasks = ['task one', 'task two', 'task three'];
+let tasks = [];
 
 class ToDoList extends React.Component {
   constructor(props){
@@ -12,12 +13,21 @@ class ToDoList extends React.Component {
     }
 
     this.deleteItem = this.deleteItem.bind(this);
+    this.addItem = this.addItem.bind(this);
   }
 
   deleteItem(item) {
     let updatedTasks = this.state.todos.filter((value) => {
       return item !== value;
     });
+    this.setState({
+      todos: updatedTasks
+    });
+  }
+
+  addItem(item) {
+    let updatedTasks = this.state.todos;
+    updatedTasks.push(item);
     this.setState({
       todos: updatedTasks
     });
@@ -31,6 +41,8 @@ class ToDoList extends React.Component {
 
     return (
       <div>
+        <h1>To do list</h1>
+        <ToDoInput onAdd={this.addItem}/>
         <ul>
           {todos}
         </ul>
