@@ -40,8 +40,8 @@ class ToDoList extends React.Component {
     });
 
     return (
-      <div>
-        <h1>To do list</h1>
+      <div className="container">
+        <h1 className="container__title">To do list</h1>
         <ToDoInput onAdd={this.addItem}/>
         <ul>
           {todos}

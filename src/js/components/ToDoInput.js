@@ -25,9 +25,9 @@ class ToDoInput extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input type="text" value={this.state.value} onChange={this.handleChange} />
-        <input type="submit" value="Add" />
+      <form className="container__form" onSubmit={this.handleSubmit}>
+        <input className="container__input" type="text" value={this.state.value} onChange={this.handleChange} />
+        <button className="container__btn" type="submit">Add</button>
       </form>
     )
   }
