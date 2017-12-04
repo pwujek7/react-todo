@@ -1,7 +1,7 @@
 react-todo
 ==============
 
-Simple weather app made with ReactJS.
+Simple to do app made with ReactJS.
 
 Used technologies:
 * HTML
