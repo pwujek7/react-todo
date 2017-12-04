@@ -46,6 +46,7 @@ class ToDoList extends React.Component {
         <ul className="container__list">
           {todos}
         </ul>
+        <p className="container__counter">{this.state.todos.length}</p>
       </div>
     )
   }

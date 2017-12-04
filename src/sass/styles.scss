@@ -1,5 +1,16 @@
 $font-ranchers: Ranchers, cursive;
 $font-roboto: Roboto, sans-serif;
+$clr-green: #2ad9a5;
+$clr-green-lighter: #a0dac9;
+$clr-white: #ffffff;
+$clr-gray: #dadada;
+$clr-red: #de2020;
+
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 body {
   margin: 0px;
@@ -9,10 +20,18 @@ body {
 
 .container {
   width: 500px;
-  margin: 0px auto;
+  margin: 50px auto;
+  padding: 15px 20px;
+  border: 2px solid $clr-gray;
+  border-radius: 15px;
+  -webkit-box-shadow: 10px 10px 20px 0px rgba(218,218,218,1);
+  -moz-box-shadow: 10px 10px 20px 0px rgba(218,218,218,1);
+  box-shadow: 10px 10px 20px 0px rgba(218,218,218,1);
+  position: relative;
 
   &__title {
     width: 100%;
+    margin-top: 0px;
     text-align: center;
     font-family: $font-ranchers;
   }
@@ -29,16 +48,16 @@ body {
 
     &:focus {
       outline: none;
-      border: 2px solid #2ad9a5;
+      border: 2px solid $clr-green;
     }
   }
 
   &__btn {
     flex: 3 3 0;
-    color: #ffffff;
+    color: $clr-white;
     font-size: 18px;
     font-family: $font-ranchers;
-    background-color: #a0dac9;
+    background-color: $clr-green-lighter;
     border: none;
     border-radius: 0 10px 10px 0;
     outline: none;
@@ -51,13 +70,11 @@ body {
       height: 24px;
       width: 24px;
       font-size: 24px;
-      color: #a0dac9;
-      background-color: #ffffff;
-      border: 2px solid #a0dac9;
+      color: $clr-green-lighter;
+      background-color: $clr-white;
+      border: 2px solid $clr-green-lighter;
       border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flex;
       position: absolute;
       top: 50%;
       right: -14px;
@@ -65,11 +82,11 @@ body {
     }
 
     &:hover {
-      background-color: #2ad9a5;
+      background-color: $clr-green;
 
       &::before {
-        color: #2ad9a5;
-        border: 2px solid #2ad9a5;
+        color: $clr-green;
+        border: 2px solid $clr-green;
       }
     }
   }
@@ -82,9 +99,9 @@ body {
   }
 
   &__item {
-    padding: 20px 10px;
-    margin: 10px;
-    border: 2px solid #dadada;
+    padding: 10px 10px;
+    margin: 20px;
+    border: 2px solid $clr-gray;
     border-radius: 10px;
     position: relative;
   }
@@ -95,25 +112,39 @@ body {
   }
 
   &__icon {
-    color: #dadada;
+    color: $clr-gray;
     font-size: 26px;
+    font-family: $font-ranchers;
     width: 30px;
     height: 30px;
-    border: 2px solid #dadada;
+    border: 2px solid $clr-gray;
     border-radius: 50%;
-    background-color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: $clr-white;
+    @include flex;
     position: absolute;
-    top: 50%;
+    top: -17px;
     right: -17px;
-    transform: translateY(-50%);
     cursor: pointer;
 
     &:hover {
-      color: #de2020;
-      border: 2px solid #de2020;
+      color: $clr-red;
+      border: 2px solid $clr-red;
     }
+  }
+
+  &__counter {
+    color: $clr-gray;
+    font-size: 32px;
+    font-family: $font-ranchers;
+    width: 40px;
+    height: 40px;
+    border: 2px solid $clr-gray;
+    border-radius: 50%;
+    background-color: $clr-white;
+    margin: 0px;
+    @include flex;
+    position: absolute;
+    top: -22px;
+    right: -22px;
   }
 }
